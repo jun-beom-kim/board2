@@ -1,0 +1,14 @@
+{{>layouts/header}}
+<form class="container" action="/article/login" method="post">
+    <div class="mb-3">
+        <label class="form-label">ID</label>
+        <input type="text" class="form-control" name="username">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Password</label>
+        <textarea class="form-control" rows="3" name="password"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn gtn-primary" formaction="/article/sign_up">회원가입</button>
+</form>
+{{>layouts/footer}}

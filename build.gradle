@@ -1,0 +1,34 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.1.0'
+	id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(21) // 실행 중인 Java 버전(21)과 일치시킵니다.
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-mustache'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+//  runtimeOnly 'com.h2database:h2'
+	implementation 'com.mysql:mysql-connector-j:8.0.33' // 최신 안정 버전 사용 권장 (8.0.33도 문제 없을 수 있음)
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	compileOnly 'org.projectlombok:lombok:1.18.32' // <-- 이 부분을 1.18.32 (또는 그 이상)로 업데이트
+	annotationProcessor 'org.projectlombok:lombok:1.18.32' // <-- 이 부분도 동일하게 업데이트
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

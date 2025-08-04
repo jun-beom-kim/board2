@@ -1,0 +1,14 @@
+{{>layouts/header}}
+<form class="container" action="/signup" method="post">
+    <div class="mb-3">
+        <label class="form-label">사용하실 아이디를 이메일 형식으로 입력해주세요</label>
+        <input type="text" class="form-control" name="username">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">비밀번호를 입력해주세요</label>
+        <textarea class="form-control" rows="3" name="password"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn gtn-primary">로그인 화면 이동</button>
+</form>
+{{>layouts/footer}}
