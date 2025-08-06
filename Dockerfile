@@ -9,7 +9,7 @@ RUN chmod +x ./gradlew
 # Gradle 빌드 실행
 RUN ./gradlew bootJar --no-daemon
 
-FROM openjdk:17-jdk-alpine
+FROM eclipse-temurin:21-jdk
 WORKDIR /app
 
 COPY --from=builder /app/build/libs/*.jar app.jar
