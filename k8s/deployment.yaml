@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: springboot
-          image: kopo13/board-app:0.0.1
+          image: kopo13/board-app:TAG-ff3a81d
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
